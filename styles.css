@@ -1,0 +1,148 @@
+:root {
+  --light-yellow: #fce67f;
+  --dark-yellow: #dcc458;
+  --black: #000;
+  --gray: #3e3b41;
+  --dark-gray: #1a191e;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  background: var(--gray);
+}
+
+header {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+input,
+button {
+  appearance: none;
+  outline: none;
+  background: none;
+  border: none;
+}
+
+button {
+  line-height: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#task-form {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0.438rem;
+  justify-content: space-between;
+}
+
+#new-task-input {
+  font-size: 16px;
+  flex: 0 1 80%;
+  margin-right: 5px;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  color: var(--white);
+  background: var(--dark-gray);
+}
+
+#new-task-input::placeholder {
+  color: var(--white);
+}
+
+#new-task-submit {
+  height: 40px;
+  width: 70px;
+  border-radius: 1rem;
+  background: var(--light-yellow);
+  color: var(--black);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#task-list-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#tasks .task {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.3rem 0.5rem 1rem;
+  border-radius: 1rem;
+  background: var(--dark-yellow);
+  align-items: center;
+  margin: 1rem 0.438rem;
+}
+
+.task .content {
+  flex: 1 1 0;
+}
+
+.task .content .task-text {
+  width: 90%;
+  color: var(--black);
+  vertical-align: middle;
+  background: var(--dark-yellow);
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  height: 10px;
+  max-height: 200px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.edit-mode {
+  color: var(--gray) !important;
+}
+
+.task .actions button {
+  cursor: pointer;
+  margin: 0 0.2rem;
+  padding: 1px 5px;
+  text-transform: uppercase;
+  background: var(--light-yellow);
+  font-weight: bold;
+  border-radius: 1rem;
+  color: var(--black);
+}
+
+@media (min-width: 576px) {
+  #task-form {
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+
+  #new-task-input {
+    flex: 0 1 90%;
+  }
+
+  #tasks .task {
+    margin: 1rem 0;
+  }
+
+  .task .actions button {
+    margin: 0 0.2rem;
+    padding: 5px 10px;
+  }
+}
